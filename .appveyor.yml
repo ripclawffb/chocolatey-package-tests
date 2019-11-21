@@ -9,19 +9,13 @@ branches:
 #build:
 #  verbosity: minimal
 
-environment:
-  package_name: p4
-
 install:
   - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
   - ps: $PSVersionTable
   - git --version
 
-build_script:
-  - ps: choco pack
-
 test_script:
-  - ps: choco install p4 -dvy
+  - ps: Test-ChocoPackages.ps1
 
 notifications:
   - provider: Email
