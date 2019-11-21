@@ -14,8 +14,10 @@ install:
   - ps: $PSVersionTable
   - git --version
 
+build: off
+
 test_script:
-  - ps: Test-ChocoPackages.ps1
+  - ps: .\Test-ChocoPackages.ps1
 
 notifications:
   - provider: Email
