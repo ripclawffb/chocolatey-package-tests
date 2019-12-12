@@ -14,4 +14,4 @@ function Test-ChocoPackages {
     END {}
 }
 
-Test-ChocoPackages -Packages p4,p4v
+Test-ChocoPackages -Packages p4,p4v,newrelic-infra
