@@ -11,7 +11,9 @@ function Test-ChocoPackages {
         }
     }
 
-    END {}
+    END {
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode)  }
+    }
 }
 
 Test-ChocoPackages -Packages p4,p4v,newrelic-infra
